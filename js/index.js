@@ -58,6 +58,22 @@ function clearIsActiveClasses(currentElement) {
     });
 }
 
+function setupMobileNav() {
+    const navbarMenu = D.getElementById('navbar-menu');
+    const navbarBurger = D.getElementById('navbar-burger');
+
+
+    navbarBurger.addEventListener('click', function () {
+        if (this.classList.contains(IS_ACTIVE)) {
+            navbarBurger.classList.remove(IS_ACTIVE);
+            navbarMenu.classList.remove(IS_ACTIVE);
+        } else {
+            navbarBurger.classList.add(IS_ACTIVE);
+            navbarMenu.classList.add(IS_ACTIVE);
+        }
+    });
+}
+
 function setupNavbarDayClickListeners(days) {
     days.forEach(function (day) {
         const id = 'navbar-item-' + day;
@@ -110,6 +126,7 @@ function setActiveNavbarDay(day) {
 D.addEventListener('DOMContentLoaded', function () {
     const day = DAYS[TODAY.getDay()];
 
+    setupMobileNav();
     setupNavbarDayClickListeners(DAYS);
     setupRandomDayMemeButton();
     setActiveNavbarDay(day);

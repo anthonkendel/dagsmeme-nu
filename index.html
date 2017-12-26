@@ -6,12 +6,11 @@
   <title> Dagsmeme.nu </title>
   <meta name="description" content="Dagsmeme.nu - Dina memes på nätet">
   <meta name="author" content="Anthon Holmqvist">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/bulma.css?v=1.0">
-  <link rel="stylesheet" href="css/bulmaswatch.min.css?v=1.0">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
-
 
   <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -47,38 +46,45 @@
   </section>
 </div>
 
-<nav class="navbar is-primary is-fixed-bottom" role="navigation" aria-label="main navigation">
-  <div id="nav-content" class="container">
-    <div class="navbar-brand">
-      <a class="navbar-item is-size-5" href="#">
-        Dagsmeme.nu
-      </a>
-    </div>
+<nav class="navbar is-info is-fixed-bottom" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item is-size-5" href="#">
+      Dagsmeme.nu
+    </a>
+
+    <button id="navbar-burger" class="button is-info navbar-burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div id="navbar-menu" class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
         <a class="navbar-link" href="#">
           Vilken dag är det?
         </a>
+
         <div class="navbar-dropdown is-right">
-          <a id="navbar-item-monday" class="navbar-item" href="#">
+          <a id="navbar-item-monday" class="navbar-item">
             Måndag
           </a>
-          <a id="navbar-item-tuesday" class="navbar-item" href="#">
+          <a id="navbar-item-tuesday" class="navbar-item">
             Tisdag
           </a>
-          <a id="navbar-item-wednesday" class="navbar-item" href="#">
+          <a id="navbar-item-wednesday" class="navbar-item">
             Onsdag
           </a>
-          <a id="navbar-item-thursday" class="navbar-item" href="#">
+          <a id="navbar-item-thursday" class="navbar-item">
             Torsdag
           </a>
-          <a id="navbar-item-friday" class="navbar-item" href="#">
+          <a id="navbar-item-friday" class="navbar-item">
             Fredag
           </a>
-          <a id="navbar-item-saturday" class="navbar-item" href="#">
+          <a id="navbar-item-saturday" class="navbar-item">
             Lördag
           </a>
-          <a id="navbar-item-sunday" class="navbar-item" href="#">
+          <a id="navbar-item-sunday" class="navbar-item">
             Söndag
           </a>
         </div>
