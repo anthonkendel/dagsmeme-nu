@@ -58,7 +58,7 @@ function clearIsActiveClasses(currentElement) {
     });
 }
 
-function setupMobileNav() {
+function setupMobileNavigation() {
     const navbarMenu = D.getElementById('navbar-menu');
     const navbarBurger = D.getElementById('navbar-burger');
 
@@ -89,8 +89,8 @@ function setupNavbarDayClickListeners(days) {
     });
 }
 
-function setupRandomDayMemeButton() {
-    const element = D.getElementById('new-meme-button');
+function setupRandomMemeButton() {
+    const element = D.getElementById('random-meme-button');
     element.addEventListener('click', function () {
         setMemeOfTheDay(active.day);
     });
@@ -98,22 +98,20 @@ function setupRandomDayMemeButton() {
 
 function setMemeOfTheDay(day) {
     const element = D.getElementById('meme-image');
-
-    const everydayMemes = memes.everyday;
     const dayMemes = memes[day].concat(memes.everyday);
-    const length = dayMemes.length;
+    const index = Math.floor(Math.random() * dayMemes.length - 1) + 1;
 
-    const index = Math.floor(Math.random() * length - 1) + 1;
-
-    if (element.src === dayMemes[index])
+    if (element.src === dayMemes[index]) {
         setMemeOfTheDay(day);
-    else
+    } else {
         element.src = dayMemes[index];
+    }
 }
 
 function setActiveNavbarDay(day) {
     const id = 'navbar-item-' + day;
     const element = D.getElementById(id);
+
     element.classList.add(IS_ACTIVE);
     active.day = day;
     active.element = element;
@@ -122,9 +120,9 @@ function setActiveNavbarDay(day) {
 D.addEventListener('DOMContentLoaded', function () {
     const day = DAYS[TODAY.getDay()];
 
-    setupMobileNav();
+    setupMobileNavigation();
     setupNavbarDayClickListeners(DAYS);
-    setupRandomDayMemeButton();
+    setupRandomMemeButton();
     setActiveNavbarDay(day);
     setMemeOfTheDay(active.day);
 });

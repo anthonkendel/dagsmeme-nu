@@ -2,6 +2,10 @@ body, .button {
     font-family: 'Alegreya Sans', sans-serif;
 }
 
+#random-meme-button {
+    width:100%;
+}
+
 .second-section {
     padding-top: 0;
 }
