@@ -62,7 +62,6 @@ function setupMobileNav() {
     const navbarMenu = D.getElementById('navbar-menu');
     const navbarBurger = D.getElementById('navbar-burger');
 
-
     navbarBurger.addEventListener('click', function () {
         if (this.classList.contains(IS_ACTIVE)) {
             navbarBurger.classList.remove(IS_ACTIVE);
@@ -101,10 +100,7 @@ function setMemeOfTheDay(day) {
     const element = D.getElementById('meme-image');
 
     const everydayMemes = memes.everyday;
-    const dayMemes = memes[day];
-    everydayMemes.forEach(function (meme) {
-        dayMemes.push(meme);
-    });
+    const dayMemes = memes[day].concat(memes.everyday);
     const length = dayMemes.length;
 
     const index = Math.floor(Math.random() * length - 1) + 1;
